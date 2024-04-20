@@ -529,6 +529,14 @@ h1 span {
 }
 @media screen and (max-width: 900px) {
   .footer-wrapper {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2,1fr);
+   
+    
   }
+  .sec{
+    padding: 20px;
+    height: 230px;
+    width: 220px;
+  }
+ 
 }
