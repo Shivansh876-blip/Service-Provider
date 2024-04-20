@@ -59,8 +59,6 @@ nav a {
   width: 100%;
 }
 
-
-
 nav .btn {
   padding: 10px 20px; /* Adjusted padding */
   border-radius: 20px;
@@ -73,6 +71,44 @@ nav .btn {
 
 nav .btn:hover {
   background-color: rgb(64, 64, 175);
+}
+
+
+.hide{
+  max-width: 800px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  flex-direction: column;
+  color: white;
+  display: none;
+  padding: 30px;
+  
+}
+.hide .first{
+margin-top:70px;
+  display: flex;
+  align-items: center;
+ flex-direction: column;
+ gap: 20px;
+}
+.first a{
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+}
+.second{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.second .btn{
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
 }
 
 

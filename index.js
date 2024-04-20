@@ -12,6 +12,13 @@ gsap.from(".nav-part1 a",{
   stagger:.2
 })
 
+const line =document.querySelector(".navline");
+const Hide =document.querySelector(".hide");
+
+line.addEventListener("click",()=>{
+    Hide.style.display="block";
+})
+
 
 
 const initSlider = () => {
