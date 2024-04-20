@@ -28,7 +28,12 @@ line.addEventListener("click",()=>{
 
 // For Page loader 
 
+const bodii=document.querySelector(".bodi");
+const loader=document.querySelector(".loading");
 
+bodii.addEventListener("onload",()=>{
+  loader.style.display="none";
+})
 
 
 
