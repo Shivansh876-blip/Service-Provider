@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sno, Name, and Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+    /* Custom CSS */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .row {
+      display: flex;
+      border-bottom: 1px solid #dee2e6;
+      transition: background-color 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+
+    .row:hover {
+      background-color: #f0f0f0; /* Change to a brighter shade on hover */
+    }
+
+    .header {
+      font-weight: bold;
+      background-color: #343a40;
+      color: #ffffff;
+    }
+
+    .header .cell {
+      padding: 10px;
+    }
+
+    .cell {
+      flex: 1;
+      padding: 20px 10px;
+      font-size: 16px;
+    }
+
+    .details {
+      padding: 20px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #dee2e6;
+      display: none; /* Initially hidden */
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out; /* Smooth fade-in transition */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative; /* Make it relative for absolute positioning of action buttons */
+      padding-bottom: 60px; /* Space for action buttons */
+    }
+
+    .details.show {
+      display: block; /* Show when toggled */
+      opacity: 1; /* Fade in */
+    }
+
+    .details h3 {
+      margin-top: 0;
+      color: #343a40;
+      font-size: 20px;
+    }
+
+    .details img {
+      margin-top: 20px;
+      max-width: 60%;
+      height: 150px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+    }
+
+    .details ul {
+      margin-top: 20px;
+      padding-left: 20px;
+    }
+
+    .details ul li {
+      list-style-type: none;
+      padding: 5px 0;
+      color: #343a40;
+      font-size: 16px;
+    }
+
+    .action-buttons {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      display: flex;
+    }
+
+    .action-buttons a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: #007bff;
+      color: #ffffff;
+      margin-left: 10px;
+      transition: background-color 0.3s, transform 0.3s;
+      font-size: 20px;
+    }
+
+    .action-buttons a:hover {
+      background-color: #0056b3;
+      transform: scale(1.1);
+    }
+
+    /* Add custom style for div containers */
+    .container > div {
+      padding: 0 20px;
+    } 
+    p a{
+      margin: 12px;
+    }
+
+    /* Responsive layout */
+    @media only screen and (max-width: 768px) {
+      .container {
+        width: 90%;
+      }
+
+      .cell {
+        padding: 15px 5px;
+        font-size: 14px;
+      }
+
+      .details {
+        padding: 15px;
+      }
+
+      .details h3 {
+        font-size: 18px;
+      }
+
+      .details ul li {
+        font-size: 14px;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .container {
+        width: 100%;
+      }
+
+      .row {
+        flex-direction: column;
+      }
+
+      .cell {
+        flex-basis: 100%;
+        padding: 10px 0;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row header">
+      <div class="cell">Sno</div>
+      <div class="cell">Name</div>
+      <div class="cell">Experience</div>
+    </div>
+    <div class="row" onclick="toggleDetails(this)">
+      <div class="cell">1</div>
+      <div class="cell">John Doe</div>
+      <div class="cell">Graphic Design Intern at ABC Company</div>
+    </div>
+    <div class="details">
+      <h3>Additional Details for <span class="name"></span></h3>
+      
+      <img src="example.jpg" alt="Example Image">
+      <ul>
+        <li>Point 1</li>
+        <li>Point 2</li>
+        <li>Point 3</li>
+        <li>Point 4</li>
+        <li>Point 5</li>
+      </ul>
+
+      <p>
+        <a href="tel:+1234567890" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
+        <a href="sms:+1234567890" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
+        <a href="mailto:example@example.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
+      </p>
+    </div>
+
+    <div class="row" onclick="toggleDetails(this)">
+      <div class="cell">1</div>
+      <div class="cell">John Doe</div>
+      <div class="cell">Graphic Design Intern at ABC Company</div>
+    </div>
+    <div class="details">
+      <h3>Additional Details for <span class="name"></span></h3>
+      
+      <img src="images.jpeg" alt="Example Image">
+      <ul>
+        <li>Point 1</li>
+        <li>Point 2</li>
+        <li>Point 3</li>
+        <li>Point 4</li>
+        <li>Point 5</li>
+      </ul>
+
+      <p>
+        <a href="tel:+1234567890" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
+        <a href="sms:+1234567890" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
+        <a href="mailto:example@example.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
+      </p>
+    </div>
+
+    <div class="row" onclick="toggleDetails(this)">
+      <div class="cell">2</div>
+      <div class="cell">John Doe</div>
+      <div class="cell">Graphic Design Intern at ABC Company</div>
+    </div>
+    <div class="details">
+      <h3>Additional Details for <span class="name"></span></h3>
+      
+      <img src="salon.png" alt="Example Image">
+      <ul>
+        <li>Point 1</li>
+        <li>Point 2</li>
+        <li>Point 3</li>
+        <li>Point 4</li>
+        <li>Point 5</li>
+      </ul>
+
+      <p>
+        <a href="tel:+1234567890" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
+        <a href="sms:+1234567890" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
+        <a href="mailto:example@example.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
+      </p>
+    </div>
+
+    <div class="row" onclick="toggleDetails(this)">
+      <div class="cell">3</div>
+      <div class="cell">John Doe</div>
+      <div class="cell">Graphic Design Intern at ABC Company</div>
+    </div>
+    <div class="details">
+      <h3>Additional Details for <span class="name"></span></h3>
+      
+      <img src="salon.png" alt="Example Image">
+      <ul>
+        <li>Point 1</li>
+        <li>Point 2</li>
+        <li>Point 3</li>
+        <li>Point 4</li>
+        <li>Point 5</li>
+      </ul>
+
+      <p>
+        <a href="tel:+1234567890" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
+        <a href="sms:+1234567890" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
+        <a href="mailto:example@example.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
+      </p>
+    </div>
+
+    <div class="row" onclick="toggleDetails(this)">
+      <div class="cell">4</div>
+      <div class="cell">John Doe</div>
+      <div class="cell">Graphic Design Intern at ABC Company</div>
+    </div>
+    <div class="details">
+      <h3>Additional Details for <span class="name"></span></h3>
+      
+      <img src="salon.png" alt="Example Image">
+      <ul>
+        <li>Point 1</li>
+        <li>Point 2</li>
+        <li>Point 3</li>
+        <li>Point 4</li>
+        <li>Point 5</li>
+      </ul>
+
+      <p>
+        <a href="tel:+1234567890" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
+        <a href="sms:+1234567890" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
+        <a href="mailto:example@example.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
+      </p>
+    </div>
+
+    <div class="row" onclick="toggleDetails(this)">
+      <div class="cell">5</div>
+      <div class="cell">John Doe</div>
+      <div class="cell">Graphic Design Intern at ABC Company</div>
+    </div>
+    <div class="details">
+      <h3>Additional Details for <span class="name"></span></h3>
+      
+      <img src="salon.png" alt="Example Image">
+      <ul>
+        <li>Point 1</li>
+        <li>Point 2</li>
+        <li>Point 3</li>
+        <li>Point 4</li>
+        <li>Point 5</li>
+      </ul>
+
+      <p>
+        <a href="tel:+1234567890" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
+        <a href="sms:+1234567890" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
+        <a href="mailto:example@example.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
+      </p>
+    </div>
+    <!-- Add more rows as needed -->
+  </div>
+  <script>
+    function toggleDetails(row) {
+      const details = row.nextElementSibling;
+      const name = row.querySelector('.cell:nth-child(2)').textContent.trim();
+      const nameSpan = details.querySelector('.name');
+      nameSpan.textContent = name;
+      details.classList.toggle('show'); // Toggle the 'show' class
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
