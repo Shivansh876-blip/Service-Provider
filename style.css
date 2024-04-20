@@ -536,7 +536,12 @@ h1 span {
   .sec{
    
     height: 230px;
-    width: 180px;
+    min-width: 180px;
+    padding-left: 15px;
   }
+  .sec2 .media {
+     gap: 10px;
+  }
+  
  
 }
