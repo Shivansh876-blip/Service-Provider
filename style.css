@@ -28,6 +28,9 @@ nav {
 .nav-part1 img {
   margin-left: 20px; /* Adjusted margin */
 }
+.nav-part2{
+   max-width: 50%;
+}
 
 .nav-part2 img{
    display: none;
@@ -66,6 +69,7 @@ nav .btn {
   margin: 0px 12px;
   width: 100px;
 }
+.nav-part2
 
 nav .btn:hover {
   background-color: rgb(64, 64, 175);
@@ -73,23 +77,16 @@ nav .btn:hover {
 
 
 @media (max-width: 800px) {
-  .nav-part1 {
+  .nav-part1 a{
     gap: 10px; /* Adjusted gap */
+   
   }
   
   .nav-part1 a {
     display: none;
   }
-  
-  .nav-part2 {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Adjusted gap */
-  }
-}
-
-@media (max-width: 600px) {
-  .nav-part2 a {
+ 
+  .nav-part2 a{
     display: none;
   }
   .nav-part2 img{
@@ -97,10 +94,21 @@ nav .btn:hover {
   }
 }
 
+
+
 @media (max-width: 480px) {
-  .nav-part1 img {
-    display: none; /* Hide logo on smaller screens */
+  
+  .nav-part1 a{
+    display: none;
   }
+  .nav-part2 a{
+    display: none;
+  }
+  .nav-part2 img{
+       display: block;
+  }
+ 
+  
 }
 
 
@@ -403,6 +411,7 @@ h1 span {
   color: black;
 }
 .cardss h2 {
+
   font-size: 28px;
   font-weight: 900;
   letter-spacing: 1px;
