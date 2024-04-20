@@ -19,7 +19,8 @@
 
     <title>Service Provider</title>
   </head>
-  <body>
+  <body onload="myFunction()">
+    <div class="loading"></div>
     <div class="main">
       <!-- Nav bar  -->
       <nav>
@@ -238,6 +239,12 @@
         </div>
       </div>
     </div>
+    <script>
+      const loader=document.querySelector(".loading");
+      function myFunction(){
+        loader.style.display = 'none';
+      }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"

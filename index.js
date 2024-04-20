@@ -12,6 +12,9 @@ gsap.from(".nav-part1 a",{
   stagger:.2
 })
 
+
+// For Show OR hide nav on mobile and tab 
+
 const line =document.querySelector(".navline");
 const Hide =document.querySelector(".hide");
 
@@ -22,6 +25,10 @@ line.addEventListener("click",()=>{
         Hide.style.display = "none";
       }
 })
+
+// For Page loader 
+
+
 
 
 
