@@ -16,7 +16,11 @@ const line =document.querySelector(".navline");
 const Hide =document.querySelector(".hide");
 
 line.addEventListener("click",()=>{
-    Hide.style.display="block";
+    if (Hide.style.display === "none") {
+        Hide.style.display = "block";
+      } else {
+        Hide.style.display = "none";
+      }
 })
 
 
