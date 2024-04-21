@@ -550,35 +550,32 @@ h1 span {
 }
 
 .client {
-  text-align: center;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
   margin-top: 40px;
   margin: auto;
   margin-top: 50px;
-
   width: 70%;
   gap: 10px;
 }
 .first-client {
   margin: auto;
-  height: 450px;
+  height: 430px;
   width: 270px;
   background-color: white;
   color: black;
-  padding: 3% 8%;
+  padding: 10px;
   border-radius: 20px;
-  transition: 0.6s;
   display: flex;
-  align-items: self-start;
   flex-direction: column;
-  overflow: hidden;
+  align-items: self-start;
+}
+.first-client > * {
+  margin-top: 25px;
 }
 .first-client p {
   text-align: left;
-  margin-top: 15px;
+
   color: #60574c;
 }
 .first-client .client-image {
@@ -586,13 +583,11 @@ h1 span {
   height: 64px;
 }
 .first-client > :nth-child(3) {
-  margin-top: 30px;
   border-radius: 50%;
   width: 100px;
 }
 .first-client h3 {
   color: #60574c;
-  margin-top: 30px;
 }
 @media (max-width: 900px) {
   .client {
@@ -625,11 +620,12 @@ h1 span {
 .service-content p {
   margin: auto;
   margin-top: 30px;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.5;
   max-width: 800px;
 }
 .service-content h2 {
+  font-size: 2.5em;
   margin-top: 30px;
 }
 .apart-content {
