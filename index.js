@@ -18,6 +18,31 @@ gsap.from(".about button", {
   stagger: 0.2,
 });
 
+
+// for increse number 
+let nums = document.querySelectorAll(".nums");
+let section = document.querySelector(".about-service");
+let started = false; // Function Started ? No
+
+window.onscroll = function () {
+  if (window.scrollY >= section.offsetTop) {
+    if (!started) {
+      nums.forEach((num) => startCount(num));
+    }
+    started = true;
+  }
+};
+
+function startCount(el) {
+  let goal = el.dataset.goal;
+  let count = setInterval(() => {
+    el.textContent++;
+    if (el.textContent == goal) {
+      clearInterval(count);
+    }
+  }, 2000 / goal);
+}
+
 // For Show OR hide nav on mobile and tab
 
 const line = document.querySelector(".navline");
