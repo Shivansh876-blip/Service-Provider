@@ -1,13 +1,20 @@
-gsap.from(".nav-part2 a", {
-  x: 300,
-  duration: 1,
-  delay: 0.5,
-  stagger: 0.2,
-});
 gsap.from(".nav-part1 a", {
   y: -100,
-  duration: 1,
-  delay: 3,
+  duration: 1.5,
+  delay: 2,
+  stagger: 0.2,
+});
+gsap.from(".nav-part2  ", {
+  y: -100,
+  duration: 1.5,
+  delay: 2,
+  stagger: 0.2,
+});
+
+gsap.from(".about button", {
+  x: -800,
+  duration: 1.5,
+  delay: 2,
   stagger: 0.2,
 });
 
@@ -28,7 +35,7 @@ line.addEventListener("click", () => {
 setTimeout(function myFunction() {
   const loader = document.querySelector(".loading");
   loader.style.display = "none";
-}, 3000);
+}, 2000);
 
 const initSlider = () => {
   const imageList = document.querySelector(".slider-wrapper .image-list");

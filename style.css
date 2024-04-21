@@ -36,9 +36,7 @@ nav {
 .nav-part1 img {
   margin-left: 20px; /* Adjusted margin */
 }
-.nav-part2 {
-  max-width: 50%;
-}
+
 
 .nav-part2 img {
   display: none;
@@ -151,7 +149,7 @@ nav .btn:hover {
 .about {
   background: rgba(0, 0, 0, 0.6) url(images/main.webp);
   background-blend-mode: darken;
-  z-index: 0;
+  
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 100%;
