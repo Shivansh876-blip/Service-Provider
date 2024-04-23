@@ -1,9 +1,4 @@
-gsap.from(".nav-part1 a", {
-  y: -100,
-  duration: 1.5,
-  delay: 2,
-  stagger: 0.2,
-});
+
 gsap.from(".nav-part2  ", {
   y: -100,
   duration: 1.5,
@@ -105,6 +100,7 @@ let nums = document.querySelectorAll(".nums");
 let section = document.querySelector(".about-service");
 let started = false; // Function Started ? No
 
+
 window.onscroll = function () {
   if (window.scrollY >= section.offsetTop) {
     if (!started) {
@@ -115,15 +111,16 @@ window.onscroll = function () {
 };
 
 function startCount(el) {
-  let goal = el.dataset.goal;
+  let goal = parseInt(el.dataset.goal); // Parse to integer
   let count = setInterval(() => {
-    el.textContent++;
-    if (el.textContent == goal) {
+    let currentCount = parseInt(el.textContent); // Parse to integer
+    currentCount++; // Increment
+    el.textContent = currentCount; // Update text content
+    if (currentCount >= goal) {
       clearInterval(count);
     }
   }, 2000 / goal);
 }
-
 // For Show OR hide nav on mobile and tab
 
 const line = document.querySelector(".navline");

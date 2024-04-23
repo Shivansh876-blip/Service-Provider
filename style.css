@@ -333,7 +333,7 @@ nav .btn:hover {
   min-height: 100vh;
   width: 100%;
   background: url(images/pexels-photo-207253.jpeg)no-repeat center ;
-  background-size: cover;/* background-color: #668dcc; */ 
+  background-size: 100% 100%;/* background-color: #668dcc; */ 
 }
 .service-wrapper {
   padding: 5% 8%; 
@@ -581,7 +581,7 @@ h1 span {
   min-height: 100vh;
   background: rgba(0, 0, 0, 0.7) url(images/pexels-photo-1764702.webp);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
 
   text-align: center;
