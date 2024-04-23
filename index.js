@@ -10,6 +10,13 @@ gsap.from(".nav-part2  ", {
   delay: 2,
   stagger: 0.2,
 });
+gsap.from(".nav-part1 a", {
+  y: -100,
+  duration: 1.5,
+  delay: 2,
+  stagger: 0.2,
+});
+
 
 gsap.from(".about button", {
   x: -800,
@@ -19,7 +26,66 @@ gsap.from(".about button", {
 });
 
 
-// for increse number 
+gsap.to(".about .text", {
+ opacity:1,
+  duration:5,
+  delay: 3,
+  stagger: 0.2,
+});
+var tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "body",
+    start: "10% 40%",
+    scrub: 2,
+  },
+});
+tl.to("nav", {
+  backgroundColor: "black",
+});
+gsap.to(".cardss", {
+  opacity: 1,
+  scrollTrigger: {
+    trigger: ".cardss",
+    scroller: "body",
+    scrub: true,
+    start: "top 50%",
+    end: " 15%  50%",
+    stagger: 2,
+  },
+});
+
+
+gsap.from(".client", {
+  x: -200,
+  duration: 1.5,
+  delay: 2,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: ".client",
+    scroller: "body",
+    scrub: true,
+    start: "top 80%",
+    stagger: 0.2,
+  },
+});
+gsap.from(".apart", {
+  y: 300,
+  duration: 1.5,
+  delay: 2,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: ".apart",
+    scroller: "body",
+    scrub: true,
+    start: "top 90%",
+    end:"50% 40%",
+    stagger:2
+  },
+});
+
+
+
+// for increse number
 let nums = document.querySelectorAll(".nums");
 let section = document.querySelector(".about-service");
 let started = false; // Function Started ? No

@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <style>
-    /* Custom CSS */
+    
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
@@ -23,27 +23,37 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       overflow: hidden;
     }
+    .container>:nth-child(2){
+      margin-top: 45px;
+    }
 
     .row {
       display: flex;
       border-bottom: 1px solid #dee2e6;
       transition: background-color 0.3s, transform 0.3s;
       cursor: pointer;
+     
     }
-
     .row:hover {
-      background-color: #f0f0f0; /* Change to a brighter shade on hover */
+      background-color: #f0f0f0; /
     }
 
     .header {
+      display: flex;
+   
+
+      height: 60px;
+      width: 80%;
       font-weight: bold;
       background-color: #343a40;
       color: #ffffff;
+      position:fixed;
+      top: 0;
+      left: 20;
+      z-index: 9999;
+      
     }
 
-    .header .cell {
-      padding: 10px;
-    }
 
     .cell {
       flex: 1;
@@ -55,18 +65,18 @@
       padding: 20px;
       background-color: #ffffff;
       border-bottom: 1px solid #dee2e6;
-      display: none; /* Initially hidden */
+      display: none; 
       opacity: 0;
-      transition: opacity 0.3s ease-in-out; /* Smooth fade-in transition */
+      transition: opacity 0.3s ease-in-out; 
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      position: relative; /* Make it relative for absolute positioning of action buttons */
-      padding-bottom: 60px; /* Space for action buttons */
+      position: relative;
+      padding-bottom: 60px;
     }
 
     .details.show {
-      display: block; /* Show when toggled */
-      opacity: 1; /* Fade in */
+      display: block; 
+      opacity: 1; 
     }
 
     .details h3 {
@@ -122,7 +132,7 @@
       transform: scale(1.1);
     }
 
-    /* Add custom style for div containers */
+    
     .container > div {
       padding: 0 20px;
     } 
@@ -154,7 +164,7 @@
       }
     }
 
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 800px) {
       .container {
         width: 100%;
       }
@@ -168,160 +178,90 @@
         padding: 10px 0;
         font-size: 14px;
       }
+      .header{
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="row header">
+    <div class=" header">
       <div class="cell">Sno</div>
       <div class="cell">Name</div>
       <div class="cell">Experience</div>
     </div>
     <div class="row" onclick="toggleDetails(this)">
       <div class="cell">1</div>
-      <div class="cell">John Doe</div>
-      <div class="cell">Graphic Design Intern at ABC Company</div>
+      <div class="cell">Ram Das</div>
+      <div class="cell">3 Years</div>
     </div>
     <div class="details">
       <h3>Additional Details for <span class="name"></span></h3>
       
-      <img src="example.jpg" alt="Example Image">
+      <img src="images/salon.png" alt="Example Image">
       <ul>
-        <li>Point 1</li>
-        <li>Point 2</li>
-        <li>Point 3</li>
-        <li>Point 4</li>
-        <li>Point 5</li>
-      </ul>
-
-      <p>
-        <a href="tel:+1234567890" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
-        <a href="sms:+1234567890" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
-        <a href="mailto:example@example.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
-      </p>
-    </div>
-
-    <div class="row" onclick="toggleDetails(this)">
-      <div class="cell">1</div>
-      <div class="cell">John Doe</div>
-      <div class="cell">Graphic Design Intern at ABC Company</div>
-    </div>
-    <div class="details">
-      <h3>Additional Details for <span class="name"></span></h3>
+        <li>Polite</li>
+        <li>Professional</li>
+        <li>Good Nature</li>
       
-      <img src="images.jpeg" alt="Example Image">
-      <ul>
-        <li>Point 1</li>
-        <li>Point 2</li>
-        <li>Point 3</li>
-        <li>Point 4</li>
-        <li>Point 5</li>
       </ul>
 
       <p>
-        <a href="tel:+1234567890" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
-        <a href="sms:+1234567890" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
-        <a href="mailto:example@example.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
+        <a href="tel:+9109682659" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
+        <a href="sms:+9109682659" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
+        <a href="guptashivanshu50@gmail.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
       </p>
     </div>
-
     <div class="row" onclick="toggleDetails(this)">
       <div class="cell">2</div>
-      <div class="cell">John Doe</div>
-      <div class="cell">Graphic Design Intern at ABC Company</div>
+      <div class="cell">Ram Kishor</div>
+      <div class="cell">5 Years</div>
     </div>
     <div class="details">
       <h3>Additional Details for <span class="name"></span></h3>
       
-      <img src="salon.png" alt="Example Image">
+      <img src="images/salon.png" alt="Example Image">
       <ul>
-        <li>Point 1</li>
-        <li>Point 2</li>
-        <li>Point 3</li>
-        <li>Point 4</li>
-        <li>Point 5</li>
+        <li>Polite</li>
+        <li>Professional</li>
+        <li>Good Nature</li>
+      
       </ul>
 
       <p>
-        <a href="tel:+1234567890" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
-        <a href="sms:+1234567890" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
-        <a href="mailto:example@example.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
+        <a href="tel:+9109682659" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
+        <a href="sms:+9109682659" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
+        <a href="guptashivanshu50@gmail.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
       </p>
     </div>
-
     <div class="row" onclick="toggleDetails(this)">
       <div class="cell">3</div>
-      <div class="cell">John Doe</div>
-      <div class="cell">Graphic Design Intern at ABC Company</div>
+      <div class="cell"> Jai Ram </div>
+      <div class="cell">2 Years</div>
     </div>
     <div class="details">
       <h3>Additional Details for <span class="name"></span></h3>
       
-      <img src="salon.png" alt="Example Image">
+      <img src="images/salon.png" alt="Example Image">
       <ul>
-        <li>Point 1</li>
-        <li>Point 2</li>
-        <li>Point 3</li>
-        <li>Point 4</li>
-        <li>Point 5</li>
-      </ul>
-
-      <p>
-        <a href="tel:+1234567890" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
-        <a href="sms:+1234567890" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
-        <a href="mailto:example@example.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
-      </p>
-    </div>
-
-    <div class="row" onclick="toggleDetails(this)">
-      <div class="cell">4</div>
-      <div class="cell">John Doe</div>
-      <div class="cell">Graphic Design Intern at ABC Company</div>
-    </div>
-    <div class="details">
-      <h3>Additional Details for <span class="name"></span></h3>
+        <li>Polite</li>
+        <li>Professional</li>
+        <li>Good Nature</li>
       
-      <img src="salon.png" alt="Example Image">
-      <ul>
-        <li>Point 1</li>
-        <li>Point 2</li>
-        <li>Point 3</li>
-        <li>Point 4</li>
-        <li>Point 5</li>
       </ul>
 
       <p>
-        <a href="tel:+1234567890" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
-        <a href="sms:+1234567890" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
-        <a href="mailto:example@example.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
+        <a href="tel:+9109682659" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
+        <a href="sms:+9109682659" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
+        <a href="guptashivanshu50@gmail.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
       </p>
     </div>
 
-    <div class="row" onclick="toggleDetails(this)">
-      <div class="cell">5</div>
-      <div class="cell">John Doe</div>
-      <div class="cell">Graphic Design Intern at ABC Company</div>
-    </div>
-    <div class="details">
-      <h3>Additional Details for <span class="name"></span></h3>
-      
-      <img src="salon.png" alt="Example Image">
-      <ul>
-        <li>Point 1</li>
-        <li>Point 2</li>
-        <li>Point 3</li>
-        <li>Point 4</li>
-        <li>Point 5</li>
-      </ul>
+  
+  
 
-      <p>
-        <a href="tel:+1234567890" class="action-button" style="color: #007bff;"><i class="material-icons">phone</i></a>
-        <a href="sms:+1234567890" class="action-button" style="color: #6c757d;"><i class="material-icons">message</i></a>
-        <a href="mailto:example@example.com" class="action-button" style="color: #28a745;"><i class="material-icons">email</i></a>
-      </p>
-    </div>
-    <!-- Add more rows as needed -->
+
   </div>
   <script>
     function toggleDetails(row) {
@@ -329,9 +269,9 @@
       const name = row.querySelector('.cell:nth-child(2)').textContent.trim();
       const nameSpan = details.querySelector('.name');
       nameSpan.textContent = name;
-      details.classList.toggle('show'); // Toggle the 'show' class
+      details.classList.toggle('show'); 
     }
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
 </body>
 </html>

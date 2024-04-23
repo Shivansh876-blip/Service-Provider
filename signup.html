@@ -1,172 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Sign Up Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <style>
-    body {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-      background-color: #212121;
-      color: #fafafa;
-    }
-
-    main {
-      flex: 1 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .signup-container {
-      background-color: #2b2b2b;
-      padding: 40px;
-      width: 80%;
-      max-width: 600px;
-      border-radius: 4px;
-      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-    }
-
-    .signup-container h2 {
-      font-size: 2.5rem;
-      font-weight: 500;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .signup-container .input-field label {
-      font-size: 1rem;
-      color: #ccc;
-    }
-
-    .signup-container .input-field input,
-    .signup-container .input-field textarea {
-      color: #fafafa;
-    }
-
-    .signup-container .btn {
-      width: 100%;
-      margin-top: 20px;
-      background-color: #4caf50;
-    }
-
-    .signup-container .btn:hover {
-      background-color: #388e3c;
-    }
-
-    .signup-container a {
-      display: block;
-      text-align: right;
-      margin-top: 10px;
-      color: #ccc;
-    }
-
-    .signup-container a:hover {
-      color: #fafafa;
-    }
-
-    @media (max-width: 992px) {
-      .signup-container h2 {
-        font-size: 2rem;
-      }
-
-      .signup-container .input-field label {
-        font-size: 0.9rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .signup-container h2 {
-        font-size: 1.75rem;
-      }
-
-      .signup-container {
-        padding: 20px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-    <div class="signup-container">
-      <h2>Sign Up</h2>
-      <form>
-        <div class="row">
-          <div class="input-field col s12 m4">
-            <input id="first-name" type="text" class="validate">
-            <label for="first-name">First Name</label>
-          </div>
-          <div class="input-field col s12 m4">
-            <input id="middle-name" type="text" class="validate">
-            <label for="middle-name">Middle Name</label>
-          </div>
-          <div class="input-field col s12 m4">
-            <input id="last-name" type="text" class="validate">
-            <label for="last-name">Last Name</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input id="email" type="email" class="validate">
-            <label for="email">Email</label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input id="confirm-email" type="email" class="validate">
-            <label for="confirm-email">Confirm Email</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input id="password" type="password" class="validate">
-            <label for="password">Password</label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input id="confirm-password" type="password" class="validate">
-            <label for="confirm-password">Confirm Password</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input id="dob" type="text" class="datepicker">
-            <label for="dob">Date of Birth</label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input id="phone" type="tel" class="validate">
-            <label for="phone">Phone Number</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input id="otp" type="text" class="validate">
-            <label for="otp">OTP</label>
-          </div>
-          <div class="col s12 m6">
-            <button class="btn waves-effect waves-light" type="button" name="action">Send OTP
-              <i class="material-icons right">send</i>
-            </button>
-          </div>
-        </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Sign Up
-          <i class="material-icons right">send</i>
-        </button>
-        <a href="log.html">Already have an account?</a>
-      </form>
-    </div>
-  </main>
+<style>
+  body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #212121;
+    color: #fafafa;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
- 
+.signup-container {
+    background-color: #2b2b2b;
+    padding: 40px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px; /* Increased border radius */
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var datePickerElements = document.querySelectorAll('.datepicker');
-      var instances = M.Datepicker.init(datePickerElements, {
-        format: 'yyyy-mm-dd',
-        autoClose: true
-      });
-    });
-  </script>
+.signup-container h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px; /* Added margin between rows */
+}
+
+.input-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-field input,
+.input-field textarea {
+    width: calc(100% - 20px); /* Adjusted width to accommodate padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Increased border radius */
+    background-color: #333;
+    color: #fafafa;
+    font-size: 1.1rem; /* Increased font size */
+}
+
+.input-field label {
+  
+    margin-left: 10px;
+    color: #ccc;
+    font-size: 1rem; /* Increased font size */
+     /* Added margin to match input field padding */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px; /* Increased padding */
+    border: none;
+    border-radius: 8px; /* Increased border radius */
+    background-color: #4caf50;
+    color: #fff;
+    font-size: 0.9rem; /* Increased font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #388e3c;
+}
+
+.signup-container a {
+    display: block;
+    text-align: right;
+    margin-top: 20px; /* Increased margin */
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.signup-container a:hover {
+    color: #fafafa;
+}
+
+</style>
+    <main>
+        <div class="signup-container">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="row">
+                    <div class="input-field ">
+                        <input id="first-name" type="text" required>
+                        <label for="first-name">First Name *</label>
+                    </div>
+                    <div class="input-field ">
+                        <input id="middle-name" type="text">
+                        <label for="middle-name">Middle Name</label>
+                    </div>
+                    <div class="input-field ">
+                        <input id="last-name" type="text" required>
+                        <label for="last-name">Last Name *</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field ">
+                        <input id="email" type="email" required>
+                        <label for="email">Email *</label>
+                    </div>
+                    <div class="input-field ">
+                        <input id="confirm-email" type="email" required>
+                        <label for="confirm-email">Confirm Email *</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field ">
+                        <input id="password" type="password" required>
+                        <label for="password">Password *</label>
+                    </div>
+                    <div class="input-field ">
+                        <input id="confirm-password" type="password" required>
+                        <label for="confirm-password">Confirm Password *</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field ">
+                        <input id="dob" type="date" required>
+                        <label for="dob">Date of Birth *</label>
+                    </div>
+                    <div class="input-field ">
+                        <input id="phone" type="tel" required>
+                        <label for="phone">Phone Number *</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field ">
+                        <input id="otp" type="text" required>
+                        <label for="otp">OTP *</label>
+                    </div>
+                    <div class="">
+                        <button class="btn waves-effect waves-light" type="button" name="action">Send OTP</button>
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Sign Up</button>
+                <a href="log.html">Already have an account?</a>
+            </form>
+        </div>
+    </main>
+    <script src="signup.js"></script>
 </body>
 </html>

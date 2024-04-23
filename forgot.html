@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+        
+        .forgot-password-container {
+            background-color: #fff;
+            padding: 40px;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .forgot-password-container h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #333;
+        }
+        
+        .forgot-password-container .input-field label {
+            font-size: 1rem;
+            color: #555;
+        }
+        
+        .forgot-password-container .input-field input[type="email"],
+        .forgot-password-container .input-field input[type="tel"],
+        .forgot-password-container .input-field input[type="text"],
+        .forgot-password-container .input-field input[type="password"],
+        .forgot-password-container .input-field input[type="number"] {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            width: 100%;
+            margin-top: 8px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .forgot-password-container .input-field input[type="email"]:focus,
+        .forgot-password-container .input-field input[type="tel"]:focus,
+        .forgot-password-container .input-field input[type="text"]:focus,
+        .forgot-password-container .input-field input[type="password"]:focus,
+        .forgot-password-container .input-field input[type="number"]:focus {
+            border-color: #007bff;
+        }
+        
+        .forgot-password-container .otp-field {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        .forgot-password-container .otp-field.show {
+            display: block;
+        }
+        
+        .forgot-password-container .btn {
+            width: 100%;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .forgot-password-container .btn:hover {
+            background-color: #0056b3;
+        }
+        
+        .forgot-password-container .links {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .forgot-password-container .links a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .forgot-password-container .links a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="forgot-password-container">
+        <h2>Forgot Password</h2>
+        <form id="forgot-password-form">
+            <div class="input-field">
+                <input id="email" type="email" class="validate" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-field">
+                <input id="phone" type="tel" class="validate" required>
+                <label for="phone">Phone Number</label>
+            </div>
+            <button id="send-otp-btn" class="btn waves-effect waves-light" type="button">Send OTP</button>
+            <div class="otp-field" id="otp-section">
+                <div class="input-field">
+                    <input id="otp" type="text" class="validate" required>
+                    <label for="otp">Enter OTP</label>
+                </div>
+                <button id="verify-otp-btn" class="btn waves-effect waves-light" type="button">Verify OTP</button>
+            </div>
+            <button id="reset-password-btn" class="btn waves-effect waves-light" type="submit" style="display: none;">Reset Password</button>
+            <div class="links">
+                <a href="log.html">Back to Login</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const sendOtpBtn = document.getElementById('send-otp-btn');
+        const otpSection = document.getElementById('otp-section');
+        const verifyOtpBtn = document.getElementById('verify-otp-btn');
+        const resetPasswordBtn = document.getElementById('reset-password-btn');
+
+        
+
+        sendOtpBtn.addEventListener('click', () => {
+            otpSection.classList.add('show');
+            sendOtpBtn.style.display = 'none';
+            resetPasswordBtn.style.display = 'block';
+        });
+
+        verifyOtpBtn.addEventListener('click', () => {
+            // Your OTP verification logic here
+            // For demonstration purpose, assume OTP is verified successfully
+            alert('OTP Verified! You can reset your password now.');
+            // Simulate form submission
+            
+        });
+
+        resetPasswordBtn.addEventListener("click",()=>{
+              window.open("createpassword.html");
+        })
+    </script>
+</body>
+</html>

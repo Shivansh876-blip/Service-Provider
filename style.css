@@ -8,7 +8,7 @@
   position: fixed;
   width: 100%;
   height: 100vh;
-  background: #0e111f url(preloader.gif) no-repeat center;
+  background: #0e111f url(images/preloader.gif) no-repeat center;
   object-fit: cover;
   z-index: 99999;
 }
@@ -16,8 +16,8 @@
 nav {
   width: 100%;
   height: 70px;
-  padding: 0 16px; /* Adjusted padding */
-  background-color: #668dcc;
+  padding: 0 16px; 
+  background-color:transparent;
   color: white;
   display: flex;
   align-items: center;
@@ -26,15 +26,19 @@ nav {
   top: 0;
   left: 0;
   z-index: 9999;
+ 
 }
+
+
+
 
 .nav-part1 {
   display: flex;
   align-items: center;
-  gap: 30px; /* Adjusted gap */
+  gap: 30px; 
 }
 .nav-part1 img {
-  margin-left: 20px; /* Adjusted margin */
+  margin-left: 20px;
 }
 
 
@@ -66,7 +70,7 @@ nav a {
 }
 
 nav .btn {
-  padding: 10px 20px; /* Adjusted padding */
+  padding: 10px 20px;
   border-radius: 20px;
   border: none;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -118,7 +122,7 @@ nav .btn:hover {
 
 @media (max-width: 800px) {
   .nav-part1 a {
-    gap: 10px; /* Adjusted gap */
+    gap: 10px;
   }
 
   .nav-part1 a {
@@ -147,7 +151,7 @@ nav .btn:hover {
 
 /* About Section */
 .about {
-  background: rgba(0, 0, 0, 0.6) url(images/main.webp);
+  background: rgba(0, 0, 0, 0.6) url(images/pexels-photo-207253.jpeg);
   background-blend-mode: darken;
   
   background-repeat: no-repeat;
@@ -164,35 +168,9 @@ nav .btn:hover {
   margin-top: 200px;
   color: white;
   font-size: 2.5rem;
-}
-/* }
-.search {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-}
-.about input {
-  flex: 1;
-  padding: 20px 150px;
-  width: 100%;
-  background: transparent;
-  border: 3px solid white;
-  outline: none;
-  border-radius: 30px;
+  opacity: 0;
 }
 
-.search button {
-  padding: 18px;
-  width: 140px;
-  border-radius: 30px;
-  background-color: transparent;
-  color: white;
-  border: 3px solid white;
-  margin: 10px;
-  font-size: 15px;
-  font-weight: 600;
-} */
 
 .log {
   display: flex;
@@ -211,11 +189,16 @@ nav .btn:hover {
   margin: 10px;
   font-size: 17px;
   font-weight: 600;
+  transition: 0.3sec ease;
+}
+.log .btn:hover{
+  color: black;
+  background-color: white;
 }
 
 @media (max-width: 800px) {
   h1 {
-    font-size: 2.5rem; /* Adjusted font size */
+    font-size: 2.5rem;
   }
 
   input {
@@ -326,7 +309,7 @@ nav .btn:hover {
   top: -10px;
   bottom: -10px;
 }
-/* Styles for mobile and tablets */
+
 @media only screen and (max-width: 1023px) {
   .slider-wrapper .slide-button {
     display: none !important;
@@ -349,10 +332,11 @@ nav .btn:hover {
 .containers {
   min-height: 100vh;
   width: 100%;
-  background-color: #668dcc;
+  background: url(images/pexels-photo-207253.jpeg)no-repeat center ;
+  background-size: cover;/* background-color: #668dcc; */ 
 }
 .service-wrapper {
-  padding: 5% 8%;
+  padding: 5% 8%; 
 }
 .service {
   display: flex;
@@ -361,31 +345,20 @@ nav .btn:hover {
 }
 
 .service h1 {
-  color: white;
+  color:  rgb(10, 33, 49);
   font-size: 5rem;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: transparent;
-  letter-spacing: 4px;
-  background-color: rgb(4, 52, 83);
-  background: linear-gradient(
-    8deg,
-    rgb(10, 33, 49) 40%,
-    rgb(70, 120, 109) 80%,
-    rgb(124, 59, 135) 120%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  margin-top: 30px;
   position: relative;
 }
 h1::after {
   content: "";
   position: absolute;
   top: 100%;
-  left: 10%;
-  height: 2px;
-  width: 80%;
+  left: 1%;
+  height: 5px;
+  width: 100%;
   border-radius: 8px;
-  background-color: rgb(21, 1, 1);
+  background-color: black;
 }
 h1 span {
   position: absolute;
@@ -394,7 +367,7 @@ h1 span {
   height: 8px;
   width: 8px;
   border-radius: 50%;
-  background-color: #6ef0b3;
+  background-color: #07f385;
   animation: anim 5s linear infinite;
 }
 
@@ -434,6 +407,7 @@ h1 span {
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  opacity: 0;
 }
 .cardss:after {
   content: "";
@@ -583,6 +557,8 @@ h1 span {
 .first-client > :nth-child(3) {
   border-radius: 50%;
   width: 100px;
+  padding: 3px;
+  border:  2px solid black;
 }
 .first-client h3 {
   color: #60574c;
@@ -603,7 +579,7 @@ h1 span {
 .service-content {
   width: 100%;
   min-height: 100vh;
-  background: rgba(0, 0, 0, 0.7) url(images/backpeg.avif);
+  background: rgba(0, 0, 0, 0.7) url(images/pexels-photo-1764702.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -685,11 +661,12 @@ h1 span {
 .conatinerss {
   min-height: 60vh;
   width: 100%;
-  background-color: #132644;
+  background-color: white;
+  /* background-color: #132644; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  color: black;
 }
 .footer-wrapper {
   margin-top: 30px;
@@ -707,7 +684,7 @@ h1 span {
 .sec ul li a {
   text-decoration: none;
   transform: translateY(-8px);
-  color: beige;
+  color: black;
   font-size: 1.4 rem;
 }
 .sec ul {
@@ -729,7 +706,7 @@ h1 span {
 .sec2 .media a {
   border: 1px solid black;
   border-radius: 50%;
-  color: beige;
+  color: black;
   padding: 5px;
 }
 
