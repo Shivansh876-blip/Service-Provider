@@ -52,7 +52,7 @@ gsap.from(".image-item", {
     trigger: ".image-item",
     scroller: "body",
     scrub: true,
-    markers:true,
+    
     start: "top 70%",
     end:"80%",
     
@@ -87,9 +87,6 @@ gsap.from(".client", {
 });
 gsap.from(".apart", {
   y: 600,
- 
-
-
   scrollTrigger: {
     trigger: ".apart",
     scroller: "body",
