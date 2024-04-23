@@ -86,17 +86,18 @@ gsap.from(".client", {
   },
 });
 gsap.from(".apart", {
-  y: 300,
-  duration: 1.5,
-  delay: 2,
-  stagger: 0.2,
+  y: 600,
+ 
+
+
   scrollTrigger: {
     trigger: ".apart",
     scroller: "body",
     scrub: true,
-    start: "top 90%",
+    start: "top 95%",
+    end :"30% 65%"
    
-    stagger:2
+    
   },
 });
 
