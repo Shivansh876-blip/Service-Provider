@@ -42,6 +42,23 @@ var tl = gsap.timeline({
 tl.to("nav", {
   backgroundColor: "black",
 });
+gsap.from(".image-item", {
+ x:900,
+
+  duration: 1.5,
+  delay: 2,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: ".image-item",
+    scroller: "body",
+    scrub: true,
+    markers:true,
+    start: "top 70%",
+    end:"80%",
+    
+   
+  },
+});
 gsap.to(".cardss", {
   opacity: 1,
   scrollTrigger: {
@@ -78,7 +95,7 @@ gsap.from(".apart", {
     scroller: "body",
     scrub: true,
     start: "top 90%",
-    end:"50% 40%",
+   
     stagger:2
   },
 });
