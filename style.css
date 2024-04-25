@@ -182,9 +182,9 @@ nav .btn:hover {
   height: 350px;
   display: flex;
   align-items: center;
-  background-color: black;
+  background: rgba(0, 0, 0, 0.39) 20%; 
   flex-direction: column;
-  color: white;
+  color: black;
   display: none;
   padding: 30px;
   width: 100%;
@@ -239,7 +239,7 @@ nav .btn:hover {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 30px;
+    gap: 15px;
   }
 }
 
