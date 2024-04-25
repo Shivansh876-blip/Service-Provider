@@ -21,25 +21,28 @@
   </head>
   <body onload="myFunction()">
     <div class="loading"></div>
+    
     <div class="main">
       <!-- Nav bar  -->
+     
+      <div id="slidePanel">
+        <button class="location-button"><i class="fa-solid fa-xmark fa-rotate-90 fa-2xl" style="color: rgba(0, 0, 0, 0.702);"></i></button>
+        <input class="location-input" type="search" placeholder="Search for area,street name ">
+      </div>
 
       <nav class=".navBar">
         <div class="nav-part1">
-          <img src="" alt="Logo" />
+          <h3><img src="" alt="QuickServe"></h3>
           <a href="#two" target="_parent">HOME</a>
           <a href="#three" target="_parent">ABOUT US</a>
           <a href="#four" target="_parent">SERVICES</a>
           <a href="#five" target="_parent">CONTACT</a>
         </div>
         <div class="nav-part2">
+          
           <img class="navline" src="images/bars-solid.svg " alt="" />
-          <a href="signup.html" target="_parent"
-            ><button class="btn">Sign Up</button></a
-          >
-          <a href="log.html" target="_parent"
-            ><button class="btn">Log In</button></a
-          >
+          <button id="toggleButton">Location</button>
+        
         </div>
       </nav>
       <div class="hide">

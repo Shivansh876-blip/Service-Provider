@@ -126,53 +126,53 @@
             </div>
         </form>
     </div>
-    <script>
-        const sendOtpBtn = document.getElementById('send-otp-btn');
-        const emailInput = document.getElementById('email');
-        const phoneInput = document.getElementById('phone');
-        const otpSection = document.getElementById('otp-section');
-        const verifyOtpBtn = document.getElementById('verify-otp-btn');
-        const resetPasswordBtn = document.getElementById('reset-password-btn');
-    
-        sendOtpBtn.addEventListener('click', () => {
-            if(validateForm()) {
-                otpSection.classList.add('show');
-                sendOtpBtn.style.display = 'none';
-                resetPasswordBtn.style.display = 'block';
-            }
-        });
-    
-        verifyOtpBtn.addEventListener('click', () => {
-            // Your OTP verification logic here
-            // For demonstration purpose, assume OTP is verified successfully
-            alert('OTP Verified! You can reset your password now.');
-            // Simulate form submission
-            
-        });
-    
-        resetPasswordBtn.addEventListener("click",()=>{
-              window.open("createpassword.html");
-        });
-    
-        function validateForm() {
-            const email = emailInput.value.trim();
-            const phone = phoneInput.value.trim();
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            const phonePattern = /^\d{10}$/;
-    
-            if (!emailPattern.test(email)) {
-                alert('Please enter a valid email address.');
-                return false;
-            }
-    
-            if (!phonePattern.test(phone)) {
-                alert('Please enter a valid 10-digit phone number.');
-                return false;
-            }
-    
-            return true;
+<script>
+    const sendOtpBtn = document.getElementById('send-otp-btn');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const otpSection = document.getElementById('otp-section');
+    const verifyOtpBtn = document.getElementById('verify-otp-btn');
+    const resetPasswordBtn = document.getElementById('reset-password-btn');
+
+    sendOtpBtn.addEventListener('click', () => {
+        if(validateForm()) {
+            otpSection.classList.add('show');
+            sendOtpBtn.style.display = 'none';
+            resetPasswordBtn.style.display = 'block';
         }
-    </script>
-    
+    });
+
+    verifyOtpBtn.addEventListener('click', () => {
+        // Your OTP verification logic here
+        // For demonstration purpose, assume OTP is verified successfully
+        alert('OTP Verified! You can reset your password now.');
+        // Simulate form submission
+        
+    });
+
+    resetPasswordBtn.addEventListener("click",()=>{
+          window.open("createpassword.html");
+    });
+
+    function validateForm() {
+        const email = emailInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phonePattern = /^\d{10}$/;
+
+        if (!emailPattern.test(email)) {
+            alert('Please enter a valid email address.');
+            return false;
+        }
+
+        if (!phonePattern.test(phone)) {
+            alert('Please enter a valid 10-digit phone number.');
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
 </body>
 </html>

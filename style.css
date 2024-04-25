@@ -4,20 +4,114 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
+/* Loader of the website  */
 .loading {
   position: fixed;
   width: 100%;
   height: 100vh;
   background: #0e111f url(images/preloader.gif) no-repeat center;
   object-fit: cover;
-  z-index: 99999;
+  z-index: 999999999;
 }
-/* Navigation Bar */
+
+/* Side panel of the website that shows the loaction  */
+#slidePanel {
+  position: fixed;
+  left: -100%; /* Start off-screen */
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10000000;
+  background-color: #f4f4f4;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: left 0.5s ease; /* Smooth transition for sliding effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+#slidePanel .location-input {
+  padding: 12px 30px;
+  margin-top: 30px;
+  width: 80%;
+  max-width: 350px;
+  text-align: center;
+  outline: none;
+  border: 1px solid gray;
+  height: 50px;
+  font-size: 17px;
+  font-weight: 600;
+  color: black;
+}
+
+#slidePanel .location-input:hover {
+  box-shadow: 0px 0px 12px 0px black;
+}
+
+.location-button {
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  align-self: flex-start;
+  margin-left: 95px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#toggleButton {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 15px;
+  margin: 20px;
+}
+
+#toggleButton:hover {
+  background-color: white;
+  color: black;
+}
+
+@media (max-width: 750px) {
+  /* Adjust styles for tablets and larger screens */
+  #slidePanel {
+    width: 50%;
+  }
+
+  .location-button {
+    margin-left: 10%;
+  }
+}
+@media (max-width: 800px) {
+  /* Adjust styles for tablets and larger screens */
+  #slidePanel {
+    width: 50%;
+  }
+
+  .location-button {
+    margin-left: 15%;
+  }
+}
+@media (min-width: 800px) {
+  /* Adjust styles for tablets and larger screens */
+  #slidePanel {
+    width: 40%;
+  }
+
+  .location-button {
+    margin-left: 19%;
+  }
+}
+
+/* Navigation Bar of the website */
 nav {
   width: 100%;
   height: 70px;
-  padding: 0 16px; 
-  background-color:transparent;
+  padding: 0 16px;
+  background-color: transparent;
   color: white;
   display: flex;
   align-items: center;
@@ -25,26 +119,25 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
- 
+  z-index: 999999;
 }
-
-
-
 
 .nav-part1 {
   display: flex;
   align-items: center;
-  gap: 30px; 
+  gap: 30px;
 }
 .nav-part1 img {
   margin-left: 20px;
 }
 
-
 .nav-part2 img {
   display: none;
-  width: 18px;
+  width: 25px;
+  background-color: transparent;
+  color: #000;
+
+  margin-right: 10px;
 }
 nav a {
   text-decoration: none;
@@ -82,6 +175,8 @@ nav .btn:hover {
   background-color: rgb(64, 64, 175);
 }
 
+/* Hide nav bar bar that shows on mobile and tab  */
+
 .hide {
   max-width: 800px;
   height: 350px;
@@ -92,6 +187,11 @@ nav .btn:hover {
   color: white;
   display: none;
   padding: 30px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
 .hide .first {
   margin-top: 70px;
@@ -135,6 +235,12 @@ nav .btn:hover {
   .nav-part2 img {
     display: block;
   }
+  .nav-part2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -149,11 +255,11 @@ nav .btn:hover {
   }
 }
 
-/* About Section */
+
+/* Home page of the website */
 .about {
   background: rgba(0, 0, 0, 0.6) url(images/pexels-photo-207253.jpeg);
   background-blend-mode: darken;
-  
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 100%;
@@ -170,7 +276,6 @@ nav .btn:hover {
   font-size: 2.5rem;
   opacity: 0;
 }
-
 
 .log {
   display: flex;
@@ -191,7 +296,7 @@ nav .btn:hover {
   font-weight: 600;
   transition: 0.3sec ease;
 }
-.log .btn:hover{
+.log .btn:hover {
   color: black;
   background-color: white;
 }
@@ -207,7 +312,7 @@ nav .btn:hover {
   }
 }
 
-/* Slider  */
+/* Slider  of the website*/
 .sliding-main {
   display: flex;
   align-items: center;
@@ -328,15 +433,15 @@ nav .btn:hover {
   }
 }
 
-/* Servivces */
+/* Servivces of the website*/
 .containers {
   min-height: 100vh;
   width: 100%;
-  background: url(images/pexels-photo-207253.jpeg)no-repeat center ;
-  background-size: 100% 100%;/* background-color: #668dcc; */ 
+  background: url(images/pexels-photo-207253.jpeg) no-repeat center;
+  background-size: 100% 100%; /* background-color: #668dcc; */
 }
 .service-wrapper {
-  padding: 5% 8%; 
+  padding: 5% 8%;
 }
 .service {
   display: flex;
@@ -345,7 +450,7 @@ nav .btn:hover {
 }
 
 .service h1 {
-  color:  rgb(10, 33, 49);
+  color: rgb(10, 33, 49);
   font-size: 5rem;
   margin-top: 30px;
   position: relative;
@@ -446,7 +551,7 @@ h1 span {
   color: black;
 }
 .cardss:hover {
-  /* background-color: transparent; */
+ 
   transform: translateY(-8px);
   border-color: #0b190e;
 }
@@ -558,7 +663,7 @@ h1 span {
   border-radius: 50%;
   width: 100px;
   padding: 3px;
-  border:  2px solid black;
+  border: 2px solid black;
 }
 .first-client h3 {
   color: #60574c;
@@ -574,7 +679,7 @@ h1 span {
   }
 }
 
-/* service-content  */
+/* service-content means what we provide facility */
 
 .service-content {
   width: 100%;
@@ -640,7 +745,7 @@ h1 span {
   color: black;
 }
 .apart:hover {
-  /* background-color: transparent; */
+  
   transform: translateY(-8px);
   border-color: #0b190e;
 }
@@ -656,13 +761,13 @@ h1 span {
   }
 }
 
-/* Footer  */
+/* Footer  of the website*/
 
 .conatinerss {
   min-height: 60vh;
   width: 100%;
   background-color: white;
-  /* background-color: #132644; */
+ 
   display: flex;
   flex-direction: column;
   align-items: center;

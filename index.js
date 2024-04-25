@@ -68,7 +68,7 @@ gsap.to(".cardss", {
 
 
 gsap.from(".client", {
-  x: -200,
+  x: -100,
   duration: 1.5,
   delay: 2,
   stagger: 0.2,
@@ -92,6 +92,8 @@ gsap.from(".apart", {
     
   },
 });
+
+
 
 
 
@@ -221,3 +223,24 @@ const initSlider = () => {
 
 window.addEventListener("resize", initSlider);
 window.addEventListener("load", initSlider);
+
+
+document.getElementById('toggleButton').addEventListener('click', function() {
+  var panel = document.getElementById('slidePanel');
+  if (panel.style.left === '0px') {
+      panel.style.left = '-50%'; // Hide the panel
+  } else {
+      panel.style.left = '0px'; // Show the panel
+  }
+});
+
+
+document.querySelector(".location-button").addEventListener("click" ,function(){
+
+  var panel = document.getElementById('slidePanel');
+  if (panel.style.left === '-50%') {y
+      panel.style.left = '0px'; // Hide the panel
+  } else {
+      panel.style.left = '-50%'; // Show the panel
+  }
+})

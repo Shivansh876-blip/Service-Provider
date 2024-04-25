@@ -157,94 +157,96 @@
             </form>
         </div>
     </main>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const signUpForm = document.getElementById('signup-form');
-            const firstNameInput = document.getElementById('first-name');
-            const lastNameInput = document.getElementById('last-name');
-            const emailInput = document.getElementById('email');
-            const confirmEmailInput = document.getElementById('confirm-email');
-            const passwordInput = document.getElementById('password');
-            const confirmPasswordInput = document.getElementById('confirm-password');
-            const dobInput = document.getElementById('dob');
-            const phoneInput = document.getElementById('phone');
-            const otpInput = document.getElementById('otp');
-    
-            signUpForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent form submission
-    
-                if (validateForm()) {
-                    // Form is valid, you can submit the form or perform other actions here
-                    signUpForm.submit(); // For example, submit the form
-                }
-            });
-    
-            function validateForm() {
-                let isValid = true;
-    
-                // Check if first name is empty
-                if (firstNameInput.value.trim() === '') {
-                    isValid = false;
-                    alert('Please enter your first name.');
-                    return isValid;
-                }
-    
-                // Check if last name is empty
-                if (lastNameInput.value.trim() === '') {
-                    isValid = false;
-                    alert('Please enter your last name.');
-                    return isValid;
-                }
-    
-                // Check if email is empty and valid
-                const email = emailInput.value.trim();
-                if (email === '') {
-                    isValid = false;
-                    alert('Please enter your email address.');
-                    return isValid;
-                } else if (!isValidEmail(email)) {
-                    isValid = false;
-                    alert('Please enter a valid email address.');
-                    return isValid;
-                }
-    
-                // Check if confirm email matches email
-                const confirmEmail = confirmEmailInput.value.trim();
-                if (email !== confirmEmail) {
-                    isValid = false;
-                    alert('Email addresses do not match.');
-                    return isValid;
-                }
-    
-                // Check if password is empty and valid
-                const password = passwordInput.value.trim();
-                if (password === '') {
-                    isValid = false;
-                    alert('Please enter a password.');
-                    return isValid;
-                } else if (password.length < 6) {
-                    isValid = false;
-                    alert('Password must be at least 6 characters long.');
-                    return isValid;
-                }
-    
-                // Check if confirm password matches password
-                const confirmPassword = confirmPasswordInput.value.trim();
-                if (password !== confirmPassword) {
-                    isValid = false;
-                    alert('Passwords do not match.');
-                    return isValid;
-                }
-    
-                return isValid;
-            }
-    
-            function isValidEmail(email) {
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return emailPattern.test(email);
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const signUpForm = document.getElementById('signup-form');
+        const firstNameInput = document.getElementById('first-name');
+        const lastNameInput = document.getElementById('last-name');
+        const emailInput = document.getElementById('email');
+        const confirmEmailInput = document.getElementById('confirm-email');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+        const dobInput = document.getElementById('dob');
+        const phoneInput = document.getElementById('phone');
+        const otpInput = document.getElementById('otp');
+
+        signUpForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            if (validateForm()) {
+                // Form is valid, you can submit the form or perform other actions here
+                signUpForm.submit(); // For example, submit the form
             }
         });
-    </script>
-    
+
+        function validateForm() {
+            let isValid = true;
+
+            // Check if first name is empty
+            if (firstNameInput.value.trim() === '') {
+                isValid = false;
+                alert('Please enter your first name.');
+                return isValid;
+            }
+
+            // Check if last name is empty
+            if (lastNameInput.value.trim() === '') {
+                isValid = false;
+                alert('Please enter your last name.');
+                return isValid;
+            }
+
+            // Check if email is empty and valid
+            const email = emailInput.value.trim();
+            if (email === '') {
+                isValid = false;
+                alert('Please enter your email address.');
+                return isValid;
+            } else if (!isValidEmail(email)) {
+                isValid = false;
+                alert('Please enter a valid email address.');
+                return isValid;
+            }
+
+            // Check if confirm email matches email
+            const confirmEmail = confirmEmailInput.value.trim();
+            if (email !== confirmEmail) {
+                isValid = false;
+                alert('Email addresses do not match.');
+                return isValid;
+            }
+
+            // Check if password is empty and valid
+            const password = passwordInput.value.trim();
+            if (password === '') {
+                isValid = false;
+                alert('Please enter a password.');
+                return isValid;
+            } else if (password.length < 6) {
+                isValid = false;
+                alert('Password must be at least 6 characters long.');
+                return isValid;
+            }
+
+            // Check if confirm password matches password
+            const confirmPassword = confirmPasswordInput.value.trim();
+            if (password !== confirmPassword) {
+                isValid = false;
+                alert('Passwords do not match.');
+                return isValid;
+            }
+
+            // You can add more validations for other fields if needed
+
+            return isValid;
+        }
+
+        function isValidEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+    });
+</script>
+
 </body>
 </html>
