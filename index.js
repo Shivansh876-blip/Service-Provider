@@ -238,9 +238,32 @@ document.getElementById('toggleButton').addEventListener('click', function() {
 document.querySelector(".location-button").addEventListener("click" ,function(){
 
   var panel = document.getElementById('slidePanel');
-  if (panel.style.left === '-50%') {y
+  if (panel.style.left === '-50%') {
       panel.style.left = '0px'; // Hide the panel
   } else {
       panel.style.left = '-50%'; // Show the panel
   }
 })
+
+
+document.querySelector(".location-btn").addEventListener("click",function(){
+   let inputarea =document.querySelector(".location-btn").value.trim();
+   var resultMessage = document.getElementById('resultMessage');
+
+   if (inputarea.value === 'jabalpur') {
+      document.querySelector(".showMessage").style.display="Block";
+      document.querySelector(".showMessage").value="Service is available";
+
+  } else {
+    document.querySelector(".showMessage").style.display="Block";
+    document.querySelector(".showMessage").value="Service is not available"
+  }
+})
+
+
+
+
+
+
+
+ 
